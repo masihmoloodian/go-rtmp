@@ -1,5 +1,6 @@
 # Nginx RTMP service
 
+Automatic nginx rtmp configuraton
 ## Requirement
 - golang
 - docker
