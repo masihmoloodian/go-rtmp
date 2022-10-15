@@ -1,4 +1,0 @@
-{
-    "db_connection": "root:root@tcp(127.0.0.1:3306)/crud_demo",
-    "service_port": 8080
-}
