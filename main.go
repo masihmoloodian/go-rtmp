@@ -6,17 +6,18 @@ import (
 	"net/http"
 
 	"github.com/gorilla/mux"
+	"github.com/masihmoloodian/go-rtmp/controllers"
 )
 
 func main() {
-	LoadAppConfig()
-
 	router := mux.NewRouter().StrictSlash(true)
 
-	log.Println(fmt.Sprintf("Server listen on port: %v", AppConfig.ServicePort))
-	http.ListenAndServe(fmt.Sprintf(":%v", AppConfig.ServicePort), router)
+	RegisterRoutes(router)
+
+	log.Println(fmt.Sprintf("Server listen on port: %v", 8000))
+	http.ListenAndServe(fmt.Sprintf(":%v", 8000), router)
 }
 
 func RegisterRoutes(router *mux.Router) {
-	
+	router.HandleFunc("/create", controllers.CreateOrUpdate).Methods("POST")
 }
