@@ -16,6 +16,7 @@ do
             rm -rf /etc/nginx/http-include/*
             nginx -s reload
         fi
+    # TODO: Remove only bad configuration instead on remove all!
     else
         rm -rf /etc/nginx/include/*
         rm -rf /etc/nginx/http-include/*
